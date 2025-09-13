@@ -1,5 +1,4 @@
 # Prerequisites
-#test
 #
 - JDK 17 or 21
 - Maven 3.9
