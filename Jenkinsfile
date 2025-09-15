@@ -23,7 +23,18 @@ pipeline {
         SONARSCANNER = 'sonarscanner'
     }
 
+    
+
     stages {
+
+        stage('Checkout SCM') {
+            steps {
+                git branch: 'jenkins-ci',
+                    url: 'git@github.com:pooyanmi/proton.git',
+                    credentialsId: 'gitlogin'
+            }
+        }
+
         stage('Build'){
             steps {
                 sh 'mvn -s settings.xml -DskipTests install'
