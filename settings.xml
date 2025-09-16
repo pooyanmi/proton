@@ -28,9 +28,9 @@
 
   <mirrors>
     <mirror>
-      <id>${CENTRAL_REPO}</id>
-      <name>${CENTRAL_REPO}</name>
-      <url>http://${NEXUSIP}:${NEXUSPORT}/repository/${NEXUS_GRP_REPO}/</url>
+      <id>maven-central</id>
+      <name>Maven-Pooyan-Group</name>
+      <url>http://192.168.56.15:8081/repository/Maven-Pooyan-Group/</url>
       <mirrorOf>*</mirrorOf>
     </mirror>
   </mirrors>
