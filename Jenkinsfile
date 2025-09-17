@@ -39,7 +39,7 @@ pipeline {
         stage('Build'){
             steps {
                    withEnv([
-                     "MAVEN_OPTS=-Xms512m -Xmx2048m -XX:MaxPermSize=512m"
+                     "MAVEN_OPTS=-Xms512m -Xmx2048m"
                   ]) {
                      sh 'mvn -s settings.xml clean install -DskipTests -U'
                   }
