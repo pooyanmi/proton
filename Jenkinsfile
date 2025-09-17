@@ -21,7 +21,7 @@ pipeline {
 		NEXUS_GRP_REPO = 'Maven-Pooyan-Group'
         NEXUS_LOGIN = 'nexuslogin'
         SONARSERVER = 'sonarserver'
-        SONARSCANNER = 'sonarscanner'
+        SONARSCANNER = 'sonar7.1'
     }
 
     
@@ -67,7 +67,7 @@ pipeline {
 
         stage('Sonar Analysis') {
             environment {
-                scannerHome = tool "${sonar7.1}"
+                scannerHome = tool "${SONARSCANNER}"
             }
             steps {
                withSonarQubeEnv("${SONARSERVER}") {
