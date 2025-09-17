@@ -38,9 +38,11 @@ pipeline {
 
         stage('Build'){
             steps {
-                 withEnv(["JAVA_TOOL_OPTIONS=-Dorg.jenkinsci.plugins.durabletask.BourneShellScript.HEARTBEAT_CHECK_INTERVAL=86400"]) {
-                    sh 'mvn -s settings.xml clean install -DskipTests -U'
-                 }
+                   withEnv([
+                     "MAVEN_OPTS=-Xms512m -Xmx2048m -XX:MaxPermSize=512m"
+                  ]) {
+                     sh 'mvn -s settings.xml clean install -DskipTests -U'
+                  }
             }
             post {
                 success {
